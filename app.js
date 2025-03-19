@@ -30,3 +30,15 @@ window.addEventListener("scroll", () => {
     navbar.classList.remove("visible-nav");
   }
 });
+
+window.addEventListener("scroll", () => {
+  document.getElementById("navber-2").classList.add("hidden");
+  const navbar = document.getElementById("navbar");
+  if (navbar.classList.contains("hidden-nav")) {
+    document.getElementById("navber-2").classList.remove("hidden");
+  }
+});
+
+document.getElementById("body").addEventListener("click", () => {
+  mobileMenu.classList.add("hidden");
+});
