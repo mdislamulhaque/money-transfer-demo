@@ -9,11 +9,17 @@
         <style>
         .hidden-nav {
             transform: translateY(-100%);
-            transition: transform 0.5s ease-in-out;
+            transition: transform 1s ease-in-out;
+            
+            /* transition-duration:1s ; */
         }
         .visible-nav {
             transform: translateY(0);
-            transition: transform 0.5s ease-in-out;
+            transition: transform 1s ease-in-out;
+            /* transition-duration: 1s; */
+        }
+        html{
+          scroll-behavior: smooth;
         }
     </style>
   </head>
@@ -277,12 +283,12 @@
 
           <!-- form  -->
           <div class="lg:w-1/3">
-            <div class="bg-black/80 px-8 py-12 drop-shadow-2xl backdrop-blur-sm">
+            <div class="bg-black/80 px-4 lg:px-8 py-12 drop-shadow-2xl backdrop-blur-sm">
               <h2 class="text-center text-xl font-semibold text-white mb-4">
                 Currency Converter
               </h2>
               <div class="flex gap-4 py-6">
-                <div class="flex flex-col w-full">
+                <div class="flex flex-col">
                   <label class="text-start text-white mb-1">You Have</label>
                   <input
                     type="number"
@@ -302,7 +308,7 @@
                 </div>
               </div>
               <div class="flex gap-4 py-4 items-center mb-4">
-                <div class="flex flex-col w-full">
+                <div class="flex flex-col">
                   <label class="text-start mb-1 text-white ">You Get</label>
                   <input
                     type="number"
