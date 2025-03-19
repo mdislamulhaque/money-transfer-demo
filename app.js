@@ -1,13 +1,24 @@
 const mobileMenuButton = document.getElementById("mobile-menu-button");
+const mobileMenuButton2 = document.getElementById("mobile-menu-button2");
 const mobileMenu = document.getElementById("mobile-menu");
+const mobileMenu2 = document.getElementById("mobile-menu2");
 const mainMenu = document.getElementById("mainMenu");
+const mainMenu2 = document.getElementById("mainMenu2");
 
 mobileMenuButton.addEventListener("click", () => {
+  console.log("click")
   mobileMenu.classList.toggle("hidden");
+});
+mobileMenuButton2.addEventListener("click", () => {
+  console.log("click");
+  mobileMenu2.classList.toggle("hidden");
 });
 
 mainMenu.addEventListener("click", () => {
   mobileMenu.classList.toggle("hidden");
+});
+mainMenu2.addEventListener("click", () => {
+  mobileMenu2.classList.toggle("hidden");
 });
 
 function toggleFAQ(id) {
@@ -41,4 +52,7 @@ window.addEventListener("scroll", () => {
 
 document.getElementById("body").addEventListener("click", () => {
   mobileMenu.classList.add("hidden");
+});
+document.getElementById("body").addEventListener("click", () => {
+  mobileMenu2.classList.add("hidden");
 });
