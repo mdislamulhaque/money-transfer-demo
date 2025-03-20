@@ -11,7 +11,7 @@
     <section
       class="min-h-screen flex items-center justify-center bg-gray-100 px-6 bg-gradient-to-tr from-[#133273] via-[#98c93c]/75 to-[#133273]"
     >
-      <div class="bg-black/50 backdrop-blur-md p-8 rounded-lg shadow-lg w-full max-w-md">
+      <div class="bg-black/50 backdrop-blur-md p-8 shadow-lg w-full max-w-md">
         <h2 class="text-3xl font-bold text-center text-white mb-6">Login</h2>
 
         <form action="#" method="POST" class="space-y-4">
@@ -23,7 +23,7 @@
               type="email"
               id="email"
               name="email"
-              class="w-full bg-white/50 border-none px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+              class="w-full bg-white/50 border-none px-4 py-3 border focus:outline-none focus:ring-2 focus:ring-green-500"
               required
             />
           </div>
@@ -36,14 +36,15 @@
               type="password"
               id="password"
               name="password"
-              class="w-full bg-white/50 border-none px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+              class="w-full bg-white/50 border-none px-4 py-3 border focus:outline-none focus:ring-2 focus:ring-green-500"
               required
             />
           </div>
 
           <div class="flex justify-between items-center text-sm text-gray-600">
             <label class="flex items-center">
-              <input type="checkbox" class="mr-2 " /> <span class="text-green-500">Remember me</span>
+              <input type="checkbox" class="mr-2" />
+              <span class="text-green-500">Remember me</span>
             </label>
             <a href="#" class="text-green-500 hover:underline"
               >Forgot password?</a
@@ -52,7 +53,7 @@
 
           <button
             type="submit"
-            class="w-full bg-green-500 text-white py-2 rounded-lg font-medium hover:bg-green-600 transition"
+            class="w-full bg-green-500 text-white py-3 font-medium hover:bg-green-600 transition"
             onclick="window.location.href='./index.html'"
           >
             Login
@@ -61,7 +62,9 @@
 
         <p class="text-center mt-4 text-white">
           Don't have an account?
-          <a href="signUp.html" class="text-green-500 hover:underline">Sign up</a>
+          <a href="signUp.html" class="text-green-500 hover:underline"
+            >Sign up</a
+          >
         </p>
       </div>
     </section>

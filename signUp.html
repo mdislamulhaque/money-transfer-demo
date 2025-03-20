@@ -12,10 +12,10 @@
     .input-group {
       display: flex;
       align-items: center;
-      border: 1px solid #ccc;
-      padding: 5px;
+      /* border: 1px solid #ccc; */
+      padding: 12px;
       /* width: 200px; */
-      border-radius: 5px;
+      /* border-radius: 5px; */
       background-color: #aab39b;
     }
 
@@ -27,7 +27,7 @@
 
     .phone-input {
       border: none;
-      padding: 2px;
+      /* padding: 2px; */
       outline: none;
       width: 100%;
       font-size: 16px;
@@ -42,13 +42,13 @@
     }
 
     #selected-country {
-      padding: 8px;
+      padding: 12px;
       /* border: 1px solid #ccc; */
       display: flex;
       align-items: center;
       cursor: pointer;
       background-color: #aab39b;
-      border-radius: 5px;
+      /* border-radius: 5px; */
     }
 
     #selected-country img {
@@ -99,7 +99,7 @@
       class="min-h-screen flex items-center justify-center px-6 bg-gradient-to-tr from-[#133273] via-[#98c93c]/75 to-[#133273]"
     >
       <div
-        class="bg-black/50 backdrop-blur-md p-8 rounded-lg shadow-lg w-full max-w-md"
+        class="bg-black/50 backdrop-blur-md p-8 shadow-lg w-full max-w-md my-12"
       >
         <h2 class="text-3xl font-bold text-center text-white mb-6">Sign Up</h2>
 
@@ -107,7 +107,7 @@
           <div>
             <label for="country" class="text-white block mb-1">Select Country</label>
             <div id="custom-dropdown">
-              <div id="selected-country" class="text-black/50 tracking-wide">Select a country</div>
+              <div id="selected-country" class="text-black/50- tracking-wide">Select a country</div>
               <div id="dropdown-list">
                 <input
                   type="text"
@@ -127,7 +127,7 @@
               type="text"
               id="name"
               name="name"
-              class="w-full bg-white/50 border-none px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+              class="w-full bg-white/50 border-none px-4 py-3 border focus:outline-none focus:ring-2 focus:ring-green-500"
               required
             />
           </div>
@@ -140,14 +140,14 @@
               type="email"
               id="email"
               name="email"
-              class="w-full px-4 bg-white/50 border-none py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+              class="w-full px-4 bg-white/50 border-none py-3 border focus:outline-none focus:ring-2 focus:ring-green-500"
               required
             />
           </div>
 
           <div>
             <label for="phoneNumber" class="text-white block mb-1">Phone Number</label>
-            <div class="input-group">
+            <div class="input-group focus:outline-none focus:ring-2 focus:ring-green-500">
               <img
                 id="phone-flag"
                 src=""
@@ -160,13 +160,26 @@
 
           <div>
             <label for="password" class="block text-white font-medium mb-2"
+              >Date of Birth</label
+            >
+            <input
+              type="date"
+              id="date"
+              name="date"
+              class="w-full px-4 bg-white/50 border-none py-3 border focus:outline-none focus:ring-2 focus:ring-green-500"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="password" class="block text-white font-medium mb-2"
               >Password</label
             >
             <input
               type="password"
               id="password"
               name="password"
-              class="w-full px-4 bg-white/50 border-none py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+              class="w-full px-4 bg-white/50 border-none py-3 border focus:outline-none focus:ring-2 focus:ring-green-500"
               required
             />
           </div>
@@ -181,7 +194,7 @@
               type="password"
               id="confirm-password"
               name="confirm-password"
-              class="w-full px-4 py-2 bg-white/50 border-none border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+              class="w-full px-4 py-3 bg-white/50 border-none border focus:outline-none focus:ring-2 focus:ring-green-500"
               required
             />
           </div>
@@ -199,7 +212,7 @@
           <button
             type="submit"
             onclick="window.location.href='./login.html'"
-            class="w-full bg-green-500 text-white py-2 rounded-lg font-medium hover:bg-green-700 transition"
+            class="w-full bg-green-500 text-white py-3 font-medium hover:bg-green-700 transition"
           >
             Sign Up
           </button>
