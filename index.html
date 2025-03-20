@@ -465,9 +465,10 @@
     </section>
 
     <!-- app download section  -->
-<section class=" px-6 py-12 flex flex-col md:flex-row items-center bg-gradient-to-r from-[#133273] via-green-500/75 to-[#133273]">
+<!-- Tailwind CSS Animated Section -->
+<section id="appSection" class="px-6 py-12 flex flex-col md:flex-row items-center bg-gradient-to-r from-[#133273] via-green-500/75 to-[#133273]">
     <!-- Mobile App Image -->
-    <div class="md:w-1/2 flex justify-center mb-6 md:mb-0">
+    <div id="mobileAppImage" class="md:w-1/2 flex justify-center mb-6 md:mb-0 opacity-0 transform -translate-x-20 transition-all duration-700">
         <img src="./assets/mobile-app.jpg" alt="Mobile App" class="w-64 md:w-80">
     </div>
     
@@ -476,7 +477,7 @@
         <h2 class="text-3xl font-bold text-white mb-4">Download Our App</h2>
         <p class="text-white mb-6">Get started with our secure and fast money transfer app.</p>
         
-        <div class="flex flex-col md:flex-row justify-center md:justify-start space-x-4">
+        <div class="flex flex-col md:flex-row justify-center md:justify-start md:space-x-4">
            <div class="flex flex-col justify-center items-center">
              <a href="#" class="block">
                 <img src="./assets/step8l.png" alt="Google Play Store" class="w-40">
@@ -492,6 +493,9 @@
         </div>
     </div>
 </section>
+
+
+
 
    
 
@@ -663,7 +667,7 @@
         <div class="mx-auto">
             <h2 class="text-lg font-semibold text-white mb-2 text-start px-2">Download Mobile App</h2>
             <div class="h-1 w-10 mx-2 bg-green-500 mb-4"></div>
-            <div class="flex space-x-4">
+            <div class="flex flex-col sm:flex-row justify-center items-start md:space-x-4">
                 <div>
                     <img src="./assets/step8l.png" alt="App Store" class="w-32 mb-2">
                     <img src="./assets/QR_code_for_mobile_English_Wikipedia.svg" alt="QR Code 1" class="w-32">

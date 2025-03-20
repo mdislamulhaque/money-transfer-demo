@@ -84,3 +84,18 @@ document.getElementById("body").addEventListener("click", () => {
      behavior: "smooth",
    });
  });
+
+
+//  <!-- JavaScript for Animation -->
+
+    const mobileAppImage = document.getElementById('mobileAppImage');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                mobileAppImage.classList.remove('opacity-0', '-translate-x-20');
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(document.getElementById('appSection'));
