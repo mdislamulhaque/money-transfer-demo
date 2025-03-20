@@ -5,19 +5,19 @@ const mobileMenu2 = document.getElementById("mobile-menu2");
 const mainMenu = document.getElementById("mainMenu");
 const mainMenu2 = document.getElementById("mainMenu2");
 
-console.log(mobileMenuButton);
-console.log(mobileMenuButton2);
+
 
 
 mobileMenuButton2.addEventListener("click", () => {
-  console.log('clicked2')
   mobileMenu2.classList.toggle("hidden");
 });
 
 mobileMenuButton.addEventListener("click", () => {
-  console.log("clicked");
   mobileMenu.classList.toggle("hidden");
 });
+
+
+
 
 mainMenu.addEventListener("click", () => {
   mobileMenu.classList.toggle("hidden");
