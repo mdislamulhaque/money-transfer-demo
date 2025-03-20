@@ -21,6 +21,24 @@
         html{
           scroll-behavior: smooth;
         }
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 60px;
+            right: 30px;
+            background-color: #143273;
+            color: white;
+            border: none;
+            padding: 12px 12px;
+            font-size: 16px;
+            border-radius: 100%;
+            cursor: pointer;
+            display: none; /* Default hidden */
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        #scrollTopBtn:hover {
+            background-color: #0056b3;
+        }
     </style>
   </head>
   <body  class="bg-gray-100">
@@ -613,6 +631,7 @@
     <footer class="bg-[#133273] text-white text-center p-4">
       <p>&copy; 2025 MoneyTransfer. All Rights Reserved.</p>
     </footer>
+       <button id="scrollTopBtn" class="animate-bounce">⬆</button>
     </main>
     <script src="./app.js"></script>
   </body>
