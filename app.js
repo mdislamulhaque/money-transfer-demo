@@ -5,13 +5,18 @@ const mobileMenu2 = document.getElementById("mobile-menu2");
 const mainMenu = document.getElementById("mainMenu");
 const mainMenu2 = document.getElementById("mainMenu2");
 
-mobileMenuButton.addEventListener("click", () => {
-  console.log("click")
-  mobileMenu.classList.toggle("hidden");
-});
+console.log(mobileMenuButton);
+console.log(mobileMenuButton2);
+
+
 mobileMenuButton2.addEventListener("click", () => {
-  console.log("click");
+  console.log('clicked2')
   mobileMenu2.classList.toggle("hidden");
+});
+
+mobileMenuButton.addEventListener("click", () => {
+  console.log("clicked");
+  mobileMenu.classList.toggle("hidden");
 });
 
 mainMenu.addEventListener("click", () => {
@@ -56,3 +61,5 @@ document.getElementById("body").addEventListener("click", () => {
 document.getElementById("body").addEventListener("click", () => {
   mobileMenu2.classList.add("hidden");
 });
+
+
