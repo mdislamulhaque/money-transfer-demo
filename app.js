@@ -1,29 +1,15 @@
 const mobileMenuButton = document.getElementById("mobile-menu-button");
-const mobileMenuButton2 = document.getElementById("mobile-menu-button2");
+
 const mobileMenu = document.getElementById("mobile-menu");
-const mobileMenu2 = document.getElementById("mobile-menu2");
+
 const mainMenu = document.getElementById("mainMenu");
-const mainMenu2 = document.getElementById("mainMenu2");
-
-
-
-
-mobileMenuButton2.addEventListener("click", () => {
-  mobileMenu2.classList.toggle("hidden");
-});
 
 mobileMenuButton.addEventListener("click", () => {
   mobileMenu.classList.toggle("hidden");
 });
 
-
-
-
 mainMenu.addEventListener("click", () => {
   mobileMenu.classList.toggle("hidden");
-});
-mainMenu2.addEventListener("click", () => {
-  mobileMenu2.classList.toggle("hidden");
 });
 
 function toggleFAQ(id) {
@@ -34,68 +20,79 @@ function toggleFAQ(id) {
   icon.classList.toggle("rotate-180");
 }
 
-let lastScrollY = 0;
-const navbar = document.getElementById("navbar");
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 0) {
-    navbar.classList.add("visible-nav");
-    navbar.classList.remove("hidden-nav");
-  } else {
-    navbar.classList.add("hidden-nav");
-    navbar.classList.remove("visible-nav");
-  }
-});
-
-window.addEventListener("scroll", () => {
-  document.getElementById("navber-2").classList.add("hidden");
-  const navbar = document.getElementById("navbar");
-  if (navbar.classList.contains("hidden-nav")) {
-    document.getElementById("navber-2").classList.remove("hidden");
-  }
-});
-
 document.getElementById("body").addEventListener("click", () => {
   mobileMenu.classList.add("hidden");
 });
-document.getElementById("body").addEventListener("click", () => {
-  mobileMenu2.classList.add("hidden");
+
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+// Show button when user scrolls down 300px
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 300) {
+    scrollTopBtn.style.display = "block";
+  } else {
+    scrollTopBtn.style.display = "none";
+  }
 });
 
-
-
-
-
- const scrollTopBtn = document.getElementById("scrollTopBtn");
-
- // Show button when user scrolls down 300px
- window.addEventListener("scroll", function () {
-   if (window.scrollY > 300) {
-     scrollTopBtn.style.display = "block";
-   } else {
-     scrollTopBtn.style.display = "none";
-   }
- });
-
- // Scroll to Top when button is clicked
- scrollTopBtn.addEventListener("click", function () {
-   window.scrollTo({
-     top: 0,
-     behavior: "smooth",
-   });
- });
-
+// Scroll to Top when button is clicked
+scrollTopBtn.addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
 
 //  <!-- JavaScript for Animation -->
 
-    const mobileAppImage = document.getElementById('mobileAppImage');
+const mobileAppImage = document.getElementById("mobileAppImage");
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                mobileAppImage.classList.remove('opacity-0', '-translate-x-20');
-            }
-        });
-    }, { threshold: 0.5 });
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        mobileAppImage.classList.remove("opacity-0", "-translate-x-20");
+      }
+    });
+  },
+  { threshold: 0.5 }
+);
 
-    observer.observe(document.getElementById('appSection'));
+observer.observe(document.getElementById("appSection"));
+
+function toggleDropdown() {
+  document.getElementById("language-dropdown").classList.toggle("hidden");
+}
+
+function selectLanguage(flagUrl) {
+  document.getElementById("selected-flag").src = flagUrl;
+  document.getElementById("language-dropdown").classList.add("hidden");
+}
+
+// Close dropdown when clicking outside
+document.addEventListener("click", function (event) {
+  const container = document.querySelector(".relative");
+  if (!container.contains(event.target)) {
+    document.getElementById("language-dropdown").classList.add("hidden");
+  }
+});
+
+let hasScrolled = false; // Track if navbar has already hidden once
+const navbar = document.getElementById("navbar");
+
+navbar.style.transition = "top 0.5s ease-in-out";
+
+window.addEventListener("scroll", function () {
+  let scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+  if (scrollTop > 0 && !hasScrolled) {
+    // Hide navbar once when scrolling starts
+    navbar.style.top = "-80px";
+
+    setTimeout(() => {
+      navbar.style.top = "0"; // Show navbar again
+    }, 1000);
+
+    hasScrolled = true; // Mark that the navbar has hidden once
+  }
+});

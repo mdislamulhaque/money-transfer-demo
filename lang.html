@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Selector</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex justify-center items-center h-screen bg-gray-100">
+
+<div class="relative">
+    <!-- Icon or Selected Flag -->
+    <button id="lang-btn" class="w-12 h-12 rounded-full border border-gray-300 bg-white shadow-md flex items-center justify-center" onclick="toggleDropdown()">
+        <img id="selected-flag" src="./assets/icons8-globe-50.png" 
+             alt="Globe" class="w-6 h-6">
+    </button>
+
+    <!-- Language Dropdown -->
+    <div id="language-dropdown" class="hidden absolute top-14 left-0 bg-white border border-gray-300 rounded-lg shadow-md ">
+        <div class="p-2 cursor-pointer hover:bg-gray-100 flex justify-center" onclick="selectLanguage('https://flagcdn.com/w40/gb.png')">
+            <div class="flex justify-center items-center gap-1 px-2">
+                <img src="https://flagcdn.com/w40/gb.png" alt="English" class="w-6 h-4 px-1"><span>English</span>
+            </div>
+        </div>
+        <div class="p-2 cursor-pointer hover:bg-gray-100 flex justify-center" onclick="selectLanguage('https://flagcdn.com/w40/bd.png')">
+           <div class="flex justify-center items-center gap-1 px-2">
+             <img src="https://flagcdn.com/w40/bd.png" alt="Bangla" class="w-6 h-4"><span>Bangla</span>
+           </div>
+        </div>
+        <div class="p-2 cursor-pointer hover:bg-gray-100 flex justify-center" onclick="selectLanguage('https://flagcdn.com/w40/fr.png')">
+            <div class="flex justify-center items-center gap-1 px-2">
+                <img src="https://flagcdn.com/w40/fr.png" alt="French" class="w-6 h-4"><span>French</span>
+            </div>
+        </div>
+        <div class="p-2 cursor-pointer hover:bg-gray-100 flex justify-center" onclick="selectLanguage('https://flagcdn.com/w40/es.png')">
+            <div class="flex justify-center items-center gap-1 px-2">
+                <img src="https://flagcdn.com/w40/es.png" alt="Spanish" class="w-6 h-4"><span>Spanish</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleDropdown() {
+        document.getElementById('language-dropdown').classList.toggle('hidden');
+    }
+
+    function selectLanguage(flagUrl) {
+        document.getElementById('selected-flag').src = flagUrl;
+        document.getElementById('language-dropdown').classList.add('hidden');
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+        const container = document.querySelector('.relative');
+        if (!container.contains(event.target)) {
+            document.getElementById('language-dropdown').classList.add('hidden');
+        }
+    });
+</script>
+
+</body>
+</html>
